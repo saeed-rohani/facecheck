@@ -1,6 +1,6 @@
 # facecheck
 
-Register people with your webcam, then check who is in front of it.
+Register face with a camera, then check who is in front of it and verify their identity.
 `facecheck` saves each person's face data and measurements in a local
 database and matches new faces against it. It needs only OpenCV and NumPy,
 and pip installs both for you.
