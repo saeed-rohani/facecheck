@@ -1,0 +1,21 @@
+# Build output
+build/
+dist/
+*.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Face data is personal: never commit databases, exports or models
+*.db
+*.csv
+json/
+*.onnx
+lbfmodel.yaml
+
+# Secrets
+.pypirc

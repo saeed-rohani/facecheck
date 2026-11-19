@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "facecheck"
+version = "1.0.0"
+description = "Register face with a camera, then check who is in front of it and verify their identity. Also measures faces and estimates face shape. Needs only OpenCV and NumPy."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Saeed Rohani" }]
+keywords = ["face", "face-recognition", "face-verification", "webcam", "opencv", "landmarks", "face-shape"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Multimedia :: Video :: Capture",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+# The only two dependencies. pip installs them automatically with facecheck.
+dependencies = [
+    # The contrib build is needed for the Facemark landmark module. 4.8 is the
+    # first release that reads the 2023 YuNet face detector.
+    "opencv-contrib-python>=4.8",
+    "numpy>=1.23",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]  # only for running the tests
+
+[project.scripts]
+facecheck = "facecheck.cli:main"
+
+# Fill in your GitHub username once the repository exists (PUBLISHING.md, step 2).
+[project.urls]
+Homepage = "https://github.com/saeed-rohani/facecheck"
+Issues = "https://github.com/saeed-rohani/facecheck/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
